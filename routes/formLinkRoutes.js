@@ -19,7 +19,7 @@ router.post("/generate-link", authMiddleware, async (req, res) => {
       const expiresAt = new Date(Date.now() + expirationTime);
       // Store the generated link in the database with userId and expiration time
       await FormLink.create({ userId, linkId, expiresAt });
-      const link = `http://localhost:3000/shareform/${linkId}`;
+      const link = `https://intake-ten.vercel.app/shareform/${linkId}`;
       res.json({ success: true, link });
     } catch (error) {
       console.error("Error generating form link:", error);
