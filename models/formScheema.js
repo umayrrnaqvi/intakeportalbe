@@ -59,8 +59,14 @@ const formSchema = new mongoose.Schema(
     employerTelephoneNumber: { type: String, required: true },
     inPain: { type: String },
     currentlyWorking: { type:String,
-        //  required: true
+         required: true
          },
+         returnToWorkDate: { type:String,
+          // required: true
+          },
+         willNotReturnToWork: { type:String,
+          // required: true
+          },
     // Seventh Form - Personal Loss
     wayYourLifeDamage: { type: String, required: true },
     spouseExperiencedAnyLossDueToInjury: { type: String, required: true },
