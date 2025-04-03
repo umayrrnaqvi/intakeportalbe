@@ -3,7 +3,9 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 const connectDB = require("./config/database");
 const userRoutes = require("./routes/userRoute")
-const formRoutes = require("./routes/formRoutes")
+const formRoutes = require("./routes/formRoutes");
+const formLinkRoutes = require("./routes/formLinkRoutes");
+
 dotenv.config();
 
 const app = express();
@@ -18,6 +20,7 @@ app.use(cors({
 connectDB();
 app.use("/api/user", userRoutes)
 app.use("/api/userForm",formRoutes)
+app.use("/api/formLink",formLinkRoutes)
 
 const PORT = process.env.PORT || 5000;
 
