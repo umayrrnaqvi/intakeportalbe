@@ -15,7 +15,7 @@ router.post("/generate-link", authMiddleware, async (req, res) => {
       }
       // Generate a unique link ID
       const linkId = crypto.randomBytes(16).toString('hex');
-      const expirationTime = 1 * 60 * 1000; // 10 minutes
+      const expirationTime = 20 * 60 * 1000; // 10 minutes
       const expiresAt = new Date(Date.now() + expirationTime);
       // Store the generated link in the database with userId and expiration time
       await FormLink.create({ userId, linkId, expiresAt });
