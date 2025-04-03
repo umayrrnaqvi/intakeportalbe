@@ -10,9 +10,8 @@ const app = express();
 
 app.use(express.json());
 app.use(cors({
-  origin: ['https://intake-back-end.vercel.app/', "http://localhost:3000"],
-  methods: "GET, POST, PUT, DELETE",
-  credentials: true, // Allow cookies, authentication, etc.
+  origin: ['https://intake-ten.vercel.app', "http://localhost:3000"],
+
 }));
 
 // app.use(cors())
