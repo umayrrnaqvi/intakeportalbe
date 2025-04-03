@@ -10,9 +10,12 @@ const app = express();
 
 app.use(express.json());
 app.use(cors({
-  origin:['https://intake-ten.vercel.app/',"http://localhost:3000"]
+  origin: ['https://intake-back-end.vercel.app/', "http://localhost:3000"],
+  methods: "GET, POST, PUT, DELETE",
+  credentials: true, // Allow cookies, authentication, etc.
 }));
 
+// app.use(cors())
 connectDB();
 app.use("/api/user", userRoutes)
 app.use("/api/userForm",formRoutes)
@@ -22,3 +25,6 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+
+module.exports = app;
