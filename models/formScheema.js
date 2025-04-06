@@ -28,7 +28,8 @@ const formSchema = new mongoose.Schema(
       ],
       required: true,
     },
-    otherInjuryCause:{type:String,required:true},
+
+    otherInjuryCause: { type: String, required: true },
     injuryCity: { type: String, required: true },
     injuryState: { type: String, required: true },
     injuryCountry: { type: String, required: true },
@@ -49,24 +50,28 @@ const formSchema = new mongoose.Schema(
     incomeBeforInjuryPerType: { type: String, required: true },
     incomeAfterInjuryPer: { type: Number, required: true },
     incomeAfterInjuryPerType: { type: String, required: true },
-    lostIncomeDueToInjury: { type: String,
-        //  required: true 
-        },
+    lostIncomeDueToInjury: {
+      type: String,
+      //  required: true 
+    },
     // Sixth Form - Employment Details
     employerName: { type: String, required: true },
     employerPosition: { type: String, required: true },
     employerAddress: { type: String, required: true },
     employerTelephoneNumber: { type: String, required: true },
     inPain: { type: String },
-    currentlyWorking: { type:String,
-         required: true
-         },
-         returnToWorkDate: { type:String,
-          // required: true
-          },
-         willNotReturnToWork: { type:String,
-          // required: true
-          },
+    currentlyWorking: {
+      type: String,
+      required: true
+    },
+    returnToWorkDate: {
+      type: String,
+      // required: true
+    },
+    willNotReturnToWork: {
+      type: String,
+      // required: true
+    },
     // Seventh Form - Personal Loss
     wayYourLifeDamage: { type: String, required: true },
     spouseExperiencedAnyLossDueToInjury: { type: String, required: true },
