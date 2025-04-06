@@ -49,16 +49,16 @@ router.post("/generate-link", authMiddleware, async (req, res) => {
 
     // Generate a unique link ID
     const linkId = crypto.randomBytes(16).toString('hex');
-    const expirationTime = 1 * 60 * 1000; // Link expires in 20 minutes
+    const expirationTime = 60 * 60 * 1000; // Link expires in 20 minutes
     const expiresAt = new Date(Date.now() + expirationTime);
 
     // Store the generated link in the database with userId and expiration time
     await FormLink.create({ userId, linkId, expiresAt, isSubmitted: false });
 
     // Generate the link that can be shared
-    // const link = `https://intake-ten.vercel.app/shareform/${linkId}`;
+    const link = `https://intake-ten.vercel.app/shareform/${linkId}`;
 
-    const link = `http://localhost:3000/shareform/${linkId}`;
+    // const link = `http://localhost:3000/shareform/${linkId}`;
 
 
     // Return the generated link to the client
